@@ -15,6 +15,7 @@ public class Image {
     private String imageName;
 
 //    @JsonIgnore
-//    @Lob
+    @Lob
     private byte[] data;
+
 }

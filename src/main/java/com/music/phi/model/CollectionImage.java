@@ -7,17 +7,13 @@ import java.util.List;
 
 @Entity
 @Data
-public class User {
+public class CollectionImage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String username;
+    private String title;
 
-    @OneToOne
-    private Image avatar;
-
-    @OneToOne
-    private Audio audio;
-
+    @ManyToOne
+    private User user;
 }

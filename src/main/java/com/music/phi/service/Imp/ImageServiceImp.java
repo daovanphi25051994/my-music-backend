@@ -1,6 +1,8 @@
 package com.music.phi.service.Imp;
 
+import com.music.phi.model.CollectionImage;
 import com.music.phi.model.Image;
+import com.music.phi.repository.CollectionImageRepository;
 import com.music.phi.repository.ImageRepository;
 import com.music.phi.service.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,9 @@ public class ImageServiceImp implements ImageService {
 
     @Autowired
     private ImageRepository imageRepository;
+
+    @Autowired
+    private CollectionImageRepository collectionImageRepository;
 
     @Override
     public Image createImage(MultipartFile file) throws IOException {

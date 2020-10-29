@@ -1,6 +1,8 @@
 package com.music.phi.api;
 
+import com.music.phi.model.Audio;
 import com.music.phi.model.Image;
+import com.music.phi.service.AudioService;
 import com.music.phi.service.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -10,15 +12,15 @@ import java.io.IOException;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("api/images")
-public class ImageAPI {
+@RequestMapping("api/audio")
+public class AudioAPI {
 
     @Autowired
-    private ImageService imageService;
+    private AudioService audioService;
 
-    @PostMapping(headers = "content-type=multipart/form-data")
-    public Image createImage(@RequestParam("file") MultipartFile file) throws IOException {
-       Image image = imageService.createImage(file);
-       return image;
+    @PostMapping
+    public Audio createAuido(@RequestParam("audio") MultipartFile file) throws IOException {
+        Audio audio = audioService.createAudio(file);
+        return audio;
     }
 }
